@@ -1,0 +1,88 @@
+using System;
+public class Account
+{
+
+    private int id;
+    private string accountType;
+    private double balance;
+
+    static double newBalance;
+
+    public int Id { get; set; }
+    public string AccountType { get; set; }
+    public double Balance { get; set; }
+
+    public Account()
+    {
+        
+    }
+
+    public Account(int Id)
+    {
+        this.Id = Id;
+    }
+
+    public Account(int Id, string AccountType)
+    {
+        this.Id = Id;
+        this.AccountType = AccountType;
+    }
+
+    public Account(int Id,string AccountType,int Balance)
+    {
+        this.Id = Id;
+        this.AccountType = AccountType;
+        this.Balance = Balance;
+
+    }
+    public bool WithDraw(double amount)
+    {
+        if ((Balance - amount) > 0)
+        {
+             newBalance = Balance-amount;
+            return true;
+        }
+        else return false;
+    }
+
+    public String GetDetails()
+    {
+        if (newBalance==0)
+        {
+            return "Account Id: " + Id + "\nAccount Type: " + AccountType + "\nBalance: " + Balance;
+        }
+        else
+        {
+            return "Account Id: " + Id + "\nAccount Type: " + AccountType + "\nBalance: " + Balance + "\nNew Balance : " + newBalance;
+        }
+            
+    }
+ 
+
+}
+
+public class Program
+{
+    public static void Main(String[] args)
+    {
+        
+        Console.WriteLine("Enter account id ");
+        int id=int.Parse(Console.ReadLine());
+        Console.WriteLine("Enter account type ");
+        string accountType = Console.ReadLine();
+        Console.WriteLine("Enter account balance ");
+        int accountBalance = int.Parse(Console.ReadLine());
+
+        Account acc = new Account(id,accountType,accountBalance);
+
+        int amount;
+        Console.WriteLine("Enter amount to withdraw");
+        amount = int.Parse(Console.ReadLine());
+
+        bool newBalance=acc.WithDraw(amount);
+        Console.WriteLine(acc.GetDetails());
+        Console.ReadKey();
+
+
+    }
+}

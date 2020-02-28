@@ -1,0 +1,16 @@
+using System;
+
+public class Program      //DO NOT change the class name
+{
+    public static void Main(String[] args)
+    {
+        Console.WriteLine("Enter a string");
+        string input = Console.ReadLine();
+        string output = input.Replace("the ", "that ");
+        
+        if(input==output)
+        Console.WriteLine(" Word 'the' not found");
+        else
+        Console.WriteLine(output);
+    }
+}

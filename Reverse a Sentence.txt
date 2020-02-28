@@ -1,0 +1,19 @@
+using System;
+
+public class Program      //DO NOT change the class name
+{
+    public static void Main(String[] args)
+    {   
+        string output="";
+        Console.WriteLine("Enter a string");
+        string input = Console.ReadLine();
+        
+       string[] words = input.Split(' ');
+        
+        for(int i=words.Length-1;i>=0;i--)
+        {
+            output = output+words[i]+" ";
+        }
+        Console.WriteLine(output);
+    }
+}

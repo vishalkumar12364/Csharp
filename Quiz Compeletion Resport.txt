@@ -1,0 +1,63 @@
+using System;
+
+
+namespace JaggedArray      //DO NOT Change the namespace name
+{
+    public class Program    //DO NOT Change the class name
+    {
+        public static void Main(string[] args)    //DO NOT change the method signature
+        {
+            Console.WriteLine("Enter the number of teams:");
+            int n = int.Parse(Console.ReadLine());
+            int[] attempts = new int[n];
+            // int attempt = 0;
+            int[][] score = new int[n][];
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("No.of attempts for team " + (i + 1) + ":");
+                attempts[i] = int.Parse(Console.ReadLine());
+                score[i] = new int[attempts[i]];
+            }
+
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("Enter the score for team {0}:", i + 1);
+                for (int j = 0; j < attempts[i]; j++)
+                {
+                    score[i][j] = int.Parse(Console.ReadLine());
+                }
+            }
+             Console.WriteLine(GetTotalScore(score));
+
+          // Console.ReadKey();
+        }
+
+
+
+        public static string GetTotalScore(int[][] score)
+        {
+                    int n=score.Length;
+                    int sum = 0;
+                    string result = "";
+                    for (int i = 0; i < n; i++)
+                    {   if (result != "")
+                            {
+                                result += " . ";
+                            }
+                        for (int j = 0; j < score[i].Length; j++)
+                        {
+                            sum += score[i][j];
+                        }
+                        result += "Team " + (i + 1) + " Total Score is " + sum;
+
+                        sum = 0;
+
+                    }
+                    return result;
+
+        }
+
+    }
+}

@@ -1,0 +1,52 @@
+using System;
+public class Calculator
+{
+    public Calculator()
+    {
+        
+    }
+    public int Addition(int a, int b)
+    {
+        return a + b;
+    }
+    public int Subtraction(int a, int b)
+    {
+        return a - b;
+    }
+    public int Multiplication(int a, int b)
+    {
+        return a * b;
+    }
+    public double Division(int a, int b, out double remainder)
+    {
+        remainder= a % b;
+        return a/b;
+    }
+
+}
+
+public class Program
+{
+    public static void Main(String[] args)
+    {
+        Console.WriteLine("Enter the operator");
+        char operand = char.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter the operands");
+        int a = int.Parse(Console.ReadLine());
+        int b = int.Parse(Console.ReadLine());
+        double r = 0.0;
+
+        Calculator calc = new Calculator();
+        if (operand == '+')
+            Console.WriteLine("Result of {0} + {1} is {2}", a, b, calc.Addition(a, b));
+        else if (operand == '-')
+            Console.WriteLine("Result of {0} - {1} is {2}", a, b, calc.Subtraction(a, b));
+        else if (operand == '*')
+            Console.WriteLine("Result of {0} * {1} is {2}", a, b, calc.Multiplication(a, b));
+        else if (operand == '/')
+            Console.WriteLine("Result of {0} / {1} is {2}", a, b, calc.Division(a, b, out r));
+        else
+            Console.WriteLine("Invalid Operator");
+    }
+}

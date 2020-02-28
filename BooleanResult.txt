@@ -1,0 +1,16 @@
+using System;
+
+public class Program      //DO NOT change the class name
+{
+    //implement code here
+    public static void Main(String[] args)
+    {
+        Console.WriteLine("Enter the value for x");
+        int x = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("Enter the value for y");
+        int y = int.Parse(Console.ReadLine());
+        
+        Console.WriteLine("The result of whether {0} is less than {1}  is {2}",x,y,x<y);
+    }
+}

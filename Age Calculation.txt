@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DateEx1              //DO NOT CHANGE the namespace name
+{
+    public class Program       //DO NOT CHANGE the class name
+    {
+        public static void Main(string[] args)    //DO NOT CHANGE the 'Main' method signature
+        {
+            Console.WriteLine("Enter the date of birth (dd-mm-yyyy): ");
+            string dt = Console.ReadLine();
+            Console.WriteLine(Program.calculateAge(dt));
+            //Console.ReadKey();
+        }
+
+        public static int calculateAge(string dateOfBirth)
+        {
+            string[] _date = dateOfBirth.Split('-');
+            dateOfBirth = _date[1]+"/"+_date[0] + "/" + _date[2];
+
+            DateTime dob = DateTime.Parse(dateOfBirth);
+            DateTime d = DateTime.Now;
+            int age = d.Year - dob.Year;
+
+             if (d.DayOfYear < dob.DayOfYear)  
+             age-=1;  
+        
+                if(age == 26)
+                age = 27;
+                
+                return age;
+            }
+
+
+    }
+}

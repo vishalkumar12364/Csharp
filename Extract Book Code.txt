@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ExtractBookCode      //Do not change the namespace name
+{
+    public class Program      //Do not change the class name
+    {
+        public static void Main(String[] arg)         //Do not change the method signature
+        {
+            Console.WriteLine("Enter the book code of length 18");
+            string bookCode = Console.ReadLine();
+            if(bookCode.Length!=18)
+               Console.WriteLine("Invalid Book Code");
+            else {
+                
+            int deptCode = int.Parse(bookCode.Substring(0, 3));
+            int yearOfPublication = int.Parse(bookCode.Substring(3, 4));
+            int noOfPages = int.Parse(bookCode.Substring(7, 5));
+            char bookId1 = char.Parse(bookCode.Substring(12, 1));
+            int bookId2 = int.Parse(bookCode.Substring(13,5));
+
+            if (!(deptCode == 101 || deptCode == 102 || deptCode == 103))
+                Console.WriteLine("Invalid Department Code");
+            else if (yearOfPublication < 1900 || yearOfPublication > 2020)
+                Console.WriteLine("Invalid Year");
+            else if (noOfPages < 00001 || noOfPages > 99999)
+                Console.WriteLine("Invalid Page Numbers");
+             else if(!(bookId1 >= 'a' && bookId1 <= 'z' || bookId1 >= 'A' && bookId1 <= 'Z'  ))
+                 Console.WriteLine("Invalid Book ID");
+            else
+                Console.WriteLine("Department Code: \t{0}\nYear of Publication: \t{1}\nNumber of Pages: \t{2}\nBook ID: \t{3}{4}", deptCode, yearOfPublication, noOfPages,bookId1,bookId2);
+            }
+        }
+    }
+}

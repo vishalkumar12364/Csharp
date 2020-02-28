@@ -1,0 +1,36 @@
+
+using System;
+
+public class Program      //DO NOT change the class name
+{
+    //implement code here
+    
+    public static void Main(string[] args)
+    {
+        Console.WriteLine("Enter name");
+        string _name = Console.ReadLine();
+        
+        Console.WriteLine("Enter age(completed years and months)");
+        string _age = Console.ReadLine();
+        
+        Console.WriteLine("Enter gender('M' for Male and 'F' for Female)");
+        string _gender = Console.ReadLine();
+        
+        Console.WriteLine("Enter city");
+        string _city = Console.ReadLine();
+        
+        Console.WriteLine("Enter mobile number");
+        string _mobile = Console.ReadLine();
+        
+        Console.WriteLine("Enter pincode");
+        string _pincode = Console.ReadLine();
+       
+        Console.WriteLine("Name: "+_name);
+        Console.WriteLine("Age: "+_age);
+        Console.WriteLine("Gender: "+_gender);
+        Console.WriteLine("City: "+_city);
+        Console.WriteLine("Mobile: "+_mobile);
+        Console.WriteLine("Pincode: "+_pincode);
+    }
+}
+

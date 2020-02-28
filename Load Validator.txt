@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LoadValidator    
+{
+    public class Program      
+    {
+        static void Main(string[] args)       
+        {  
+            int people, weight ;
+            
+            Console.WriteLine("Enter the number of people");
+            people = int.Parse(Console.ReadLine());
+            
+            Console.WriteLine("Enter the total load in the elevator");
+            weight = int.Parse(Console.ReadLine());
+            
+            // Validator validate = new Validator();
+            // validate.ValidateElevatorLoad(weight);
+            Validator.ValidateElevatorLoad(weight);
+            
+        }
+    }
+    public class Validator     
+    {
+        public static bool ValidateElevatorLoad(int elevatorLoad)   
+        {
+           if(elevatorLoad>1400)
+           Console.WriteLine("Maximum load exceeded");
+           else
+           Console.WriteLine("Ready to Go");
+           return true;
+        }
+        
+    }
+
+}
